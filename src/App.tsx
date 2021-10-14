@@ -1,11 +1,17 @@
-import React from 'react';
+import Authentication from "pages/Authentication";
+import React from "react";
+import { GlobalStyle } from "styles/global/style";
 
 function App() {
   return (
-    <div className="App">
-      <p>Ola, mundo!</p>     
-    </div>
+    <>
+      <GlobalStyle />
+      <Authentication />
+    </>
   );
+
+
+
 }
 
 export default App;
