@@ -1,95 +1,47 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect } from "react";
 
-import { HomeContainer, } from "./styles";
+import { HomeContainer, Container } from "./styles";
 import { useWeather } from "data/hooks/useWeather.Page";
+import { NavBarComponent } from "components/NavBar";
+import { Card } from "components/Card";
+import { SearchBar } from "components/SearchBar";
+import { useToken } from "data/hooks/useToken";
 
 export function Home() {
-    const { weather, coord, main, wind, sys, getWeather } = useWeather();
+    const { weather } = useToken();
 
-    const [location, setLocation] = useState(false);
+    const { getWeather } = useWeather();
+
+
+    function mps(mps: any) {
+        const n = 3.6 * mps;
+        return n.toFixed(0);
+    }
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition((position) => {
             getWeather(position.coords.latitude, position.coords.longitude);
-            setLocation(true);
         });
     }, []);
     return (
         <>
             <HomeContainer>
-                <Fragment>
-                    <h3>Clima tempo </h3>
-                    <hr />
-                    <ul>
-                        <li>{main?.feels_like}</li>
-                        <li>{main?.humidity}</li>
-                        <li>{main?.pressure}</li>
-                        <li>{main?.humidity}</li>
-                        <li>{main?.sea_level}</li>
-                        <li>{main?.temp}</li>
-                        <li>{main?.temp_max}</li>
-                        <li>{main?.temp_min}</li>
-                        <li>Temperatura atual: </li>
-                        <li>Temperatura máxima: x</li>
-                        <li>Temperatura mínima: x</li>
+                <NavBarComponent />
 
-                        <li>Umidade: x</li>
-                        <li>Pressão: x {weather?.description}</li>
-                    </ul>
-                    <button
-                        onClick={() => {
-                            alert(weather?.description);
-                        }}
-                    >
-                        Click
-                    </button>
-                </Fragment>
+                <Container>
+                    <SearchBar />
+                    <Card
+                        temperatura={weather?.main.temp.toFixed(0)}
+                        ceu={weather?.weather[0].description}
+                        tem_max={weather?.main.temp_max}
+                        tem_min={weather?.main.temp_min}
+                        umidade={weather?.main.humidity}
+                        vento_max={mps(weather?.wind.speed)}
+                        cidade={weather?.name}
+                        chuva_pt={weather?.clouds.all}
+                    />
+                </Container>
             </HomeContainer>
         </>
     );
 }
-/*
-let getWeather = async (lat: number, lon: number) => {
-        let res: Root = await axios.get(
-            "http://api.openweathermap.org/data/2.5/weather",
-            {
-                params: {
-                    lat: lat,
-                    lon: lon,
-                    appid: process.env.REACT_APP_WEATHER,
-                    lang: "pt",
-                    units: "metric",
-                },
-            }
-        );
-
-        setWeather(res.weather[0]);
-    };
-<Fragment>
-                    <h3>Clima tempo </h3>
-                    <hr />
-                    <ul>
-                        <li>{main?.feels_like}</li>
-                        <li>{main?.humidity}</li>
-                        <li>{main?.pressure}</li>
-                        <li>{main?.humidity}</li>
-                        <li>{main?.sea_level}</li>
-                        <li>{main?.temp}</li>
-                        <li>{main?.temp_max}</li>
-                        <li>{main?.temp_min}</li>
-                        <li>Temperatura atual: </li>
-                        <li>Temperatura máxima: x</li>
-                        <li>Temperatura mínima: x</li>
-
-                        <li>Umidade: x</li>
-                        <li>Pressão: x {weather?.description}</li>
-                    </ul>
-                    <button
-                        onClick={() => {
-                            alert(weather?.description);
-                        }}
-                    >
-                        Click
-                    </button>
-                </Fragment>
-    */

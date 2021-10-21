@@ -1,94 +1,74 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     height: 100vh;
+    overflow: auto;
+
+    background: linear-gradient(135deg, #242e4d, #897e79);
 `;
 
-export const AsideContainer = styled.aside`
-    align-items: center;
-    background-image: linear-gradient(90deg, #375c71, #66b5ee);
-    display: flex;
 
-    flex: 8;
-    flex-direction: column;
 
-    @media (max-width: 768px) {
-        display: none;
-    }
-`;
-
-export const MainContainer = styled.main`
-    flex: 7;
-    padding: 0 32px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`;
-
-export const InnerContainer = styled.div`
-    align-items: center;
-    display: flex;
-
-    border-radius: 10px;
-    background: white;
-    border-radius: 30px;
-    background-repeat: no-repeat;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.562);
-    flex-direction: column;
-
-    justify-content: center;
-    width: 80%;
-    height: 90%;
-`;
-
-export const Title = styled.h1`
-    display: block;
-    font-family: Poppins-Bold;
-    font-size: 39px;
-    color: #333333;
-    line-height: 1.2;
-    text-align: center;
-`;
-
-export const BtnGM = styled(Link)`
-    align-items: center;
-    background: #ea4335;
-    border-radius: 30px;
+export const Title = styled.div`
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
     color: white;
-    display: flex;
-    font-family: Poppins-Bold;
-    font-size: 18px;
-    height: 40px;
-    justify-content: center;
-    margin-top: 20px;
-    text-decoration: none;
-    width: 90%;
-
-    &:hover {
-        background: #66b5ee;
-    }
-`;
-
-export const BtnFC = styled(BtnGM)`
-    background-color: #3b5998;
-`;
-
-export const BtnGH = styled(BtnGM)`
-    background-color: #181f1f;
-`;
-
-export const LogoImg = styled.img`
-    width: 50px;
-    height: 50px;
     text-align: center;
+    font-size: 40px;
+    font-size: 2.5rem;
+    letter-spacing: 0px;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 `;
 
-export const Illustration = styled.img`
-    width: 70%;
-    height: 400px;
-    object-fit: fill;
+export const Subtitle = styled.div`
+    font-family: "Poppins", sans-serif;
+    color: white;
+    text-align: center;
+    line-height: 1em;
+    font-weight: 100;
+    letter-spacing: 0px;
+    letter-spacing: 0.05em;
+`;
+
+export const LoginWrap = styled.div`
+    width: 100%;
+    margin: auto;
+    max-width: 525px;
+    min-height: 670px;
+    position: relative;
+    background: url(/src/assets/images/lg-img.jpg) no-repeat center;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+`;
+
+export const LoginHtml = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 90px 70px 50px 70px;
+    background: rgba(40, 57, 101, 0.9);
+`;
+
+export const LoginForm = styled.div`
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+`;
+
+export const Group = styled.div`
+    margin-bottom: 20px;
+`;
+
+export const Hr = styled.div`
+    height: 2px;
+    margin: 50px 0 40px 0;
+    background: rgba(255, 255, 240, 0.2);
 `;

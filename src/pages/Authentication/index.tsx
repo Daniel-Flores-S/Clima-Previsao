@@ -1,76 +1,59 @@
-import { FaGoogle, FaFacebookF, FaGithub } from "react-icons/fa";
-import {
-    Container,
-    AsideContainer,
-    MainContainer,
-    InnerContainer,
-    Title,
-    LogoImg,
-    BtnGM,
-    BtnFC,
-    BtnGH,
-    Illustration,
-} from "./styles";
+import { Container, Subtitle, Title, LoginWrap, LoginHtml, Group, Hr, LoginForm } from "./styles";
 
-import logo from "assets/logo.png";
-import illustration from "assets/illustration.png";
+import git from "assets/icons-rd/github-icon.svg";
+import goog from "assets/icons-rd/google-icon.svg";
+import linkedin from "assets/icons-rd/linkedin-icon.svg";
+
+import { ButtonGoogle } from "components/Button";
+
 
 function Authentication() {
+
+
     return (
-        <Container >
-            <AsideContainer>
-                <Illustration
-                    src={illustration}
-                    alt="ilustração previsão do tempo"
-                />
+        <Container>
+            <LoginWrap>
+                <LoginHtml>
+                    <Title>login</Title>
+                    <Subtitle>
+                        Por favor, faça login com uma das seguintes redes
+                        sociais.
+                    </Subtitle>
 
-                <Title>Crie salas de Q&A ao-vivo</Title>
-                <p>Centro de Previsão de Tempo e Estudos Climáticos</p>
-            </AsideContainer>
+                    <LoginForm>
+                        <Hr></Hr>
 
-            <MainContainer>
-                <InnerContainer>
-                    <Title>
-                        <LogoImg src={logo} alt="logo ilustração nuvem e sol" />
-                        Clima Tempo
-                    </Title>
+                        <Group>
+                            <ButtonGoogle
+                                text="Continuar com Google"
+                                img={goog}
+                                alt="google"
+                                color=" #f3584a"
+                            />
+                        </Group>
+                        <Group>
+                            <ButtonGoogle
+                                text="Continuar com Github"
+                                img={git}
+                                alt="google"
+                                color="#11110F"
+                            />
+                        </Group>
+                        <Group>
+                            <ButtonGoogle
+                                text="Continuar com Linkedin"
+                                img={linkedin}
+                                alt="google"
+                                color="#4078c0"
+                            />
+                        </Group>
 
-                    <BtnGM to="/home">
-                        <FaGoogle style={{ marginRight: 10 }} />
-                        Google
-                    </BtnGM>
-
-                    <BtnFC to="/home">
-                        <FaFacebookF style={{ marginRight: 10 }} />
-                        Facebook
-                    </BtnFC>
-
-                    <BtnGH to="/home">
-                        <FaGithub style={{ marginRight: 10 }} />
-                        GitHub
-                    </BtnGH>
-                </InnerContainer>
-            </MainContainer>
+                        <Hr></Hr>
+                    </LoginForm>
+                </LoginHtml>
+            </LoginWrap>
         </Container>
     );
 }
 
 export default Authentication;
-/*<Container>
-            <AsideContainer>
-                <Title>
-                    Login
-                </Title>
-                <AuthGmail>
-                    <FaGoogle /> Gmail
-                </AuthGmail>
-                <AuthFace>
-                    <FaFacebookF color={"#ffffff"} />
-                    Facebook
-                </AuthFace>
-                <AuthGithub>
-                    <FaGithub color={"#ffffff"} />
-                    Git
-                </AuthGithub>
-            </AsideContainer>
-        </Container>*/
