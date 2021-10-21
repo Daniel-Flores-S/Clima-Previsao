@@ -11,6 +11,7 @@ export interface Root {
     dt: number;
     sys: Sys;
     timezone: number;
+    rain: Rain;
     id: number;
     name: string;
     cod: number;
@@ -53,6 +54,12 @@ export interface Sys {
     country: string;
     sunrise: number;
     sunset: number;
+}
+
+export interface Rain {
+
+    h1: number;
+    h3: number;
 }
 
 

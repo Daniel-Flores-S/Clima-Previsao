@@ -1,14 +1,10 @@
-import axios from "axios";
 import { ApiService } from "data/services/Api.Service";
-import { Root, Coord, Weather, Main, Wind, Sys } from "data/types/weather";
-import { useState } from "react";
+import { Root } from "data/types/weather";
+
+import { useToken } from "./useToken";
 
 export function useWeather() {
-    const [weather, setWeather] = useState<Weather>(),
-        [coord, setCoord] = useState<Coord>(),
-        [main, setMain] = useState<Main>(),
-        [wind, setWind] = useState<Wind>(),
-        [sys, setSys] = useState<Sys>();
+    const { addWeather } = useToken();
 
     async function getWeather(lat: number, lon: number) {
         const response = await ApiService.get<Root>("/weather", {
@@ -20,20 +16,24 @@ export function useWeather() {
                 units: "metric",
             },
         });
+        addWeather(response.data);
+    }
 
-        setWeather(response.data.weather[0]);
-        setCoord(response.data.coord);
-        setMain(response.data.main);
-        setWind(response.data.wind);
-        setSys(response.data.sys);
+    async function searchCity(city: string) {
+        const response = await ApiService.get<Root>("/weather", {
+            params: {
+                q: city + ",br",
+                appid: process.env.REACT_APP_WEATHER,
+                lang: "pt",
+                units: "metric",
+            },
+        });
+
+        addWeather(response.data);
     }
 
     return {
-        weather,
-        coord,
-        main,
-        wind,
-        sys,
         getWeather,
+        searchCity,
     };
 }
