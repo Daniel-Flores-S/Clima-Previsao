@@ -12,7 +12,6 @@ export function Home() {
 
     const { getWeather } = useWeather();
 
-
     function mps(mps: any) {
         const n = 3.6 * mps;
         return n.toFixed(0);

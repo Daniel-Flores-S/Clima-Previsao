@@ -14,9 +14,7 @@ export const Main = styled.div`
 
     @media (max-width: 768px) {
         width: 90%;
-        
     }
-
 `;
 
 export const CardMain = styled.div`
@@ -26,8 +24,6 @@ export const CardMain = styled.div`
     width: 100%;
 `;
 
-
-
 export const CardTitleRight = styled.p`
     font-family: arial;
     text-align: center;
@@ -36,6 +32,11 @@ export const CardTitleRight = styled.p`
 
     h1 {
         color: white;
+    }
+
+    span {
+        color: #fff8dc;
+        font-size: 1em;
     }
 
     p {
@@ -65,12 +66,6 @@ export const WeatherList = styled.ul`
     list-style: none;
     display: block;
     list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 2em;
-    padding-inline-end: 2em;
 `;
 export const WeatherItem = styled.li`
     color: #aaa;
@@ -82,5 +77,9 @@ export const WeatherItem = styled.li`
         font-size: 1em;
         color: #000 !important;
         margin-right: 0.5em;
+    }
+
+    @media (max-width: 450px) {
+        display: block;
     }
 `;

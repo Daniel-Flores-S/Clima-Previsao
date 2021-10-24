@@ -27,15 +27,12 @@ type CardProps = {
 };
 
 export const Card = (props: CardProps) => {
-
-
     return (
         <Main>
             <CardMain>
                 <CardTitleRight>
-                    <h1>
-                        {props.cidade} Céu {props.ceu}
-                    </h1>
+                    <h1>{props.cidade}</h1>
+                    <span>Céu {props.ceu}</span>
                     <p>
                         <img src={d} alt="temperatura" />
                         <Price>{props.temperatura}°</Price>
@@ -67,12 +64,7 @@ export const Card = (props: CardProps) => {
                                         height="10"
                                         alt="Temperatura mínima"
                                     />
-                                    <img
-                                        src={gota}
-                                        width="10"
-                                        height="10"
-                                        alt="Temperatura mínima"
-                                    />
+
                                     <img
                                         src={gota}
                                         width="10"
