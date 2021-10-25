@@ -14,8 +14,7 @@ export const useAuthGoogle = () => {
 
     const [name, setName] = useState(""),
         [email, setEmail] = useState(),
-        [photo, setPhoto] = useState(),
-        [googleId, setGoogleId] = useState();
+        [photo, setPhoto] = useState();
 
     const responseGoogle = (
         response: GoogleLoginResponse | any | GoogleLoginResponseOffline
@@ -24,13 +23,11 @@ export const useAuthGoogle = () => {
             profileObj: { name, email, imageUrl, googleId },
         } = response;
 
-        addUser(response.profileObj);
         setName(name);
         setEmail(email);
         setPhoto(imageUrl);
-        setGoogleId(googleId);
 
-        if (googleId === "" || googleId === undefined) {
+        if (googleId) {
             addToken(googleId);
             addUser({ name, email, imageUrl, googleId });
 
@@ -39,7 +36,6 @@ export const useAuthGoogle = () => {
     };
 
     return {
-        googleId,
         name,
         email,
         photo,
