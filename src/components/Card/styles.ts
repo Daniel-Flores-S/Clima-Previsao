@@ -1,30 +1,20 @@
 import styled from "styled-components";
 
 export const Main = styled.div`
-    align-items: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
     border: 1px solid #a9a9a9;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     font-family: arial;
-    justify-content: center;
-    margin: auto;
-    width: 50%;
-
-    @media (max-width: 768px) {
-        width: 90%;
-    }
+    width: 100%;
+    max-width: 700px;
 `;
 
-export const CardMain = styled.div`
+export const CardTitle = styled.div`
     background-color: #009ee2;
     display: flex;
-    justify-content: center;
-    width: 100%;
-`;
-
-export const CardTitleRight = styled.p`
+    flex-direction: column;
     font-family: arial;
     text-align: center;
     padding: 10px 0 12px 0;
@@ -81,5 +71,6 @@ export const WeatherItem = styled.li`
 
     @media (max-width: 450px) {
         display: block;
+        margin-top: 2px;
     }
 `;

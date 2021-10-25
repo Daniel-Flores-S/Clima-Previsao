@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Btn = styled.button`
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     color: #fff;
     display: block;
     font-size: 1.2rem;
@@ -12,7 +12,8 @@ export const Btn = styled.button`
     width: 100%;
 
     &:hover {
-        opacity: 0.8;
+        cursor: pointer;
+        opacity: 0.9;
     }
 
     img {

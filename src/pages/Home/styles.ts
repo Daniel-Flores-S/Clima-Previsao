@@ -9,6 +9,9 @@ export const HomeContainer = styled.div`
 `;
 
 export const Container = styled.nav`
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     padding-top: 7%;
     padding-right: 15px;
     padding-left: 15px;
@@ -16,7 +19,7 @@ export const Container = styled.nav`
     @media (max-width: 850px) {
         padding-top: 10%;
     }
-    
+
     @media (max-width: 768px) {
         padding-top: 20%;
     }

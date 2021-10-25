@@ -1,6 +1,5 @@
 import {
-    CardMain,
-    CardTitleRight,
+    CardTitle,
     ListContainer,
     Main,
     Price,
@@ -29,16 +28,14 @@ type CardProps = {
 export const Card = (props: CardProps) => {
     return (
         <Main>
-            <CardMain>
-                <CardTitleRight>
+                <CardTitle>
                     <h1>{props.cidade}</h1>
                     <span>Céu {props.ceu}</span>
                     <p>
                         <img src={d} alt="temperatura" />
                         <Price>{props.temperatura}°</Price>
                     </p>
-                </CardTitleRight>
-            </CardMain>
+                </CardTitle>
 
             <ListContainer>
                 <WeatherList>

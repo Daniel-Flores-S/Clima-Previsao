@@ -1,35 +1,42 @@
 import styled from "styled-components";
+import background from "assets/background/backImag.jpeg";
 
 export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    display: flex;
     justify-content: center;
-    width: 100%;
-    height: 100vh;
+    //background-image: url(${background});
+    background-image: url("https://services.meteored.com/img/article/la-falla-dei-modelli-climatici-e-il-ruolo-delle-nuvole-sul-clima-341951-1_768.jpeg");
+    background-size: cover;
     overflow: auto;
-
-    background: linear-gradient(135deg, #242e4d, #897e79);
+    height: 100vh;
+    width: 100%;
 `;
 
-
+export const Wrap = styled.div`
+    align-items: center;
+    background-image: linear-gradient(-225deg, #e3fdf5 50%, #ffe6fa 50%);
+    border: 0.4px solid #8fb3f5;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
+    max-width: 500px;
+    width: 100%;
+`;
 
 export const Title = styled.div`
-    font-family: "Poppins", sans-serif;
+    color: #4b2354;
     font-weight: 700;
-    color: white;
-    text-align: center;
-    font-size: 40px;
     font-size: 2.5rem;
     letter-spacing: 0px;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
-    margin-bottom: 10px;
 `;
 
 export const Subtitle = styled.div`
-    font-family: "Poppins", sans-serif;
-    color: white;
+    color: #4b2354;
     text-align: center;
     line-height: 1em;
     font-weight: 100;
@@ -37,30 +44,9 @@ export const Subtitle = styled.div`
     letter-spacing: 0.05em;
 `;
 
-export const LoginWrap = styled.div`
-    width: 100%;
-    margin: auto;
-    max-width: 525px;
-    min-height: 670px;
-    position: relative;
-    background: url(/src/assets/images/lg-img.jpg) no-repeat center;
-    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
-        0 17px 50px 0 rgba(0, 0, 0, 0.19);
-`;
-
-export const LoginHtml = styled.div`
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    padding: 90px 70px 50px 70px;
-    background: rgba(40, 57, 101, 0.9);
-`;
-
 export const LoginForm = styled.div`
-    min-height: 345px;
-    position: relative;
-    perspective: 1000px;
-    transform-style: preserve-3d;
+    max-width: 600px;
+    width: 95%;
 `;
 
 export const Group = styled.div`
@@ -68,7 +54,16 @@ export const Group = styled.div`
 `;
 
 export const Hr = styled.div`
+    background: #6d8d99;
     height: 2px;
-    margin: 50px 0 40px 0;
-    background: rgba(255, 255, 240, 0.2);
+    margin: 40px 0 40px 0;
+    width: 100%;
 `;
+
+/*export const LoginHtml = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 90px 70px 50px 70px;
+    background: rgba(40, 57, 101, 0.9);
+`; */

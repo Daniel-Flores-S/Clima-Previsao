@@ -40,7 +40,7 @@ export const NavBarComponent = () => {
                         <span> {user?.email} </span>
                     </li>
                     <li>
-                        <a href="#" onClick={() => {
+                        <a href="/" onClick={() => {
                             handleLogout();
                         }}>Sair</a>
                     </li>
