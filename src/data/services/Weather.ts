@@ -29,7 +29,7 @@ export const useAuthGoogle = () => {
         setPhoto(imageUrl);
         setGoogleId(googleId);
 
-        if (googleId) {
+        if (googleId === "") {
             addToken(googleId);
             history.push("/home");
         }
