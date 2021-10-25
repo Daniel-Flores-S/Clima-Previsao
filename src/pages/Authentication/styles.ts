@@ -15,7 +15,7 @@ export const Container = styled.div`
 export const Wrap = styled.div`
     align-items: center;
     background-image: linear-gradient(-225deg, #e3fdf5 50%, #ffe6fa 50%);
-    border: 0.4px solid #8fb3f5;
+    border: 0.4px solid #fff;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
