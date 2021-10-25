@@ -20,7 +20,7 @@ function Authentication() {
     return (
         <Container>
             <Wrap>
-                <Title>login</Title>
+                <Title>bem-vindo</Title>
                 <Subtitle>Por favor, entre para continuar.</Subtitle>
                 <LoginForm>
                     <Hr />

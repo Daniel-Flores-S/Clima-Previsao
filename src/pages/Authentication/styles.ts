@@ -5,8 +5,7 @@ export const Container = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
-    //background-image: url(${background});
-    background-image: url("https://services.meteored.com/img/article/la-falla-dei-modelli-climatici-e-il-ruolo-delle-nuvole-sul-clima-341951-1_768.jpeg");
+    background-image: url(${background});
     background-size: cover;
     overflow: auto;
     height: 100vh;
@@ -27,8 +26,8 @@ export const Wrap = styled.div`
 `;
 
 export const Title = styled.div`
-    color: #4b2354;
-    font-weight: 700;
+    color: #000000;
+    font-weight: 600;
     font-size: 2.5rem;
     letter-spacing: 0px;
     letter-spacing: 0.05rem;
@@ -37,6 +36,7 @@ export const Title = styled.div`
 
 export const Subtitle = styled.div`
     color: #4b2354;
+    font-weight: 300;
     text-align: center;
     line-height: 1em;
     font-weight: 100;
