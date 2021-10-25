@@ -21,7 +21,7 @@ export const useAuthGoogle = () => {
         response: GoogleLoginResponse | any | GoogleLoginResponseOffline
     ) => {
         const {
-            profileObj: { name, email, imageUrl, googleId }, 
+            profileObj: { name, email, imageUrl, googleId },
         } = response;
 
         addUser(response.profileObj);
@@ -30,8 +30,7 @@ export const useAuthGoogle = () => {
         setPhoto(imageUrl);
         setGoogleId(googleId);
 
-        if (googleId) {
-
+        if (googleId === "" || googleId === undefined) {
             addToken(googleId);
             addUser({ name, email, imageUrl, googleId });
 

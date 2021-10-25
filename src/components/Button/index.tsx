@@ -13,7 +13,6 @@ type ButtonProps = {
 export const ButtonGoogle = (props: ButtonProps) => {
     const {responseGoogle } = useAuthGoogle();
 
-    const key = process.env.REACT_APP_GOOGLE_KEY;
     return (
         <GoogleLogin
             clientId={process.env.REACT_APP_GOOGLE_KEY || ""}
