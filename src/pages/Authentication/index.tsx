@@ -26,18 +26,15 @@ function Authentication() {
                     <Hr />
                     <Group>
                         <ButtonGoogle
-                            text="Continuar com Google"
+                            text="Continuar com Github"
                              img={git}
                             alt="google"
-                            color="#11110F"
-                            img={goog}
-                            alt="google"
-                            color=" #f3584a"
+                            color="#11110F"                           
                         />
                     </Group>
                     <Group>
                         <ButtonGoogle
-                            text="Continuar com Github"
+                            text="Continuar com Google"
                            img={goog}
                             alt="google"
                             color=" #f3584a"
